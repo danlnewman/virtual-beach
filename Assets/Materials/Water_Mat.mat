@@ -64,8 +64,8 @@ Material:
     - Vector1_41DB9F63: 40
     - Vector1_56095803: 0.075
     - Vector1_58D05660: 5
-    - Vector1_C41A7E18: 1.1
-    - Vector1_CDB7BE37: 1
+    - Vector1_C41A7E18: 2
+    - Vector1_CDB7BE37: 0.75
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

@@ -21,6 +21,8 @@ public class Spinner : MonoBehaviour
     IEnumerator Spin()
     {
         yield return new WaitForSeconds(5);
+        GetComponent<Animator>().SetBool("spinnerIsOn", true);
+        yield return new WaitForSeconds(5);
         spinny.AddRelativeTorque(0f, 0f, 1000f);
     }
 }
