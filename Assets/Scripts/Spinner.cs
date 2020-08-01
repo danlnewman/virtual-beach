@@ -9,12 +9,18 @@ public class Spinner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spinny.AddRelativeTorque(0f, 0f, 100f);
+        StartCoroutine(Spin());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    IEnumerator Spin()
+    {
+        yield return new WaitForSeconds(5);
+        spinny.AddRelativeTorque(0f, 0f, 1000f);
     }
 }
