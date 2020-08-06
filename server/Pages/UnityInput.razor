@@ -1,6 +1,6 @@
 ﻿@page "/{text}"
 @using server.Data
-@inject UnityService ShipService
+@inject UnityService UnityService
 
 <h1>@WebText</h1>
 
@@ -8,13 +8,12 @@
     [Parameter]
     public string Text { get; set; }
     public string WebText = "";
-    int shipId;
 
     protected override void OnInitialized()
     {
         Text = Text ?? "none";
 
-        ShipService.SendMessage(Text);
+        UnityService.SendMessage(Text);
         WebText = "Unity was sent the command \"" + Text + "\".";
     }
 }

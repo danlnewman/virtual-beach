@@ -26,10 +26,10 @@ namespace server.Data
             inbox = new BlockingCollection<UnityMessage>(new ConcurrentQueue<UnityMessage>());
         }
 
-        public void SendMessage(string type)
+        public void SendMessage(string mtype)
         {
             Console.WriteLine(httpContextAccessor.HttpContext.Connection.RemoteIpAddress);
-            UnityMessage message = new UnityMessage(type);
+            UnityMessage message = new UnityMessage(mtype);
             SendMessage(message);
         }
 
@@ -58,8 +58,7 @@ namespace server.Data
 
                             string jsonString = JsonSerializer.Serialize(savedMessage);
                             string jsonSocketString = jsonString.Length + "#" + jsonString;
-                            if (savedMessage.type.Equals("heartbeat"))
-                                Console.WriteLine(jsonSocketString);
+                            Console.WriteLine(jsonSocketString);
                             byte[] buf = Encoding.ASCII.GetBytes(jsonSocketString);
                             stream.Write(buf, 0, buf.Length);
                             //savedMessage = null;

@@ -6,11 +6,11 @@ namespace server.Data
 {
     public class UnityMessage 
     {
-        public string type { get; set; }
+        public string mtype { get; set; }
 
-        public UnityMessage(string type)
+        public UnityMessage(string mtype)
         {
-            this.type = type;
+            this.mtype = mtype;
         }
     }
 }
