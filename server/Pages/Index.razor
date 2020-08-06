@@ -1,0 +1,26 @@
+﻿@page "/"
+@using server.Data
+@inject UnityService ShipService
+
+<button class="btn btn-primary" @onclick="Raffle">Raffle</button>
+<button class="btn btn-primary" @onclick="NgcConfetti">NGC Confetti</button>
+<button class="btn btn-primary" @onclick="RtxConfetti">RTX Confetti</button>
+
+@code {
+    private void Raffle()
+    {
+      ShipService.SendMessage("raffle");
+    }
+
+    private void NgcConfetti()
+    {
+      ShipService.SendMessage("ngcconfetti");
+    }
+
+    private void RtxConfetti()
+    {
+      ShipService.SendMessage("rtxconfetti");
+    }
+
+
+}
