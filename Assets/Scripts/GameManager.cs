@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Random.InitState((int)System.DateTime.Now.Subtract(new System.DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds);
     }
 
     // Update is called once per frame
