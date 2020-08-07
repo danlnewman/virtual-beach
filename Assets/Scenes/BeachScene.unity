@@ -691,8 +691,10 @@ MonoBehaviour:
   rtxConfetti:
   - {fileID: 1796782408}
   - {fileID: 1422141674}
+  spinner: {fileID: 0}
   activateRtxConfetti: 0
   activateNgcConfetti: 0
+  activateRaffle: 0
 --- !u!4 &1375213749
 Transform:
   m_ObjectHideFlags: 0
