@@ -9,9 +9,13 @@ public class GameManager : MonoBehaviour
     ParticleSystem[] ngcConfetti;
     [SerializeField]
     ParticleSystem[] rtxConfetti;
+    [SerializeField]
+    Spinner spinner;
+
 
     public bool activateRtxConfetti = false;
     public bool activateNgcConfetti = false;
+    public bool activateRaffle = false;
 
     // Use this for initialization
     private void Awake()
@@ -46,6 +50,11 @@ public class GameManager : MonoBehaviour
             ShootConfetti(ngcConfetti);
             activateNgcConfetti = false;
         }
+        if (activateRaffle)
+        {
+            StartCoroutine(spinner.Spin());
+            activateRaffle = false;
+        }
     }
 
     static public void OnMessage(UnityMessage message)
@@ -60,6 +69,9 @@ public class GameManager : MonoBehaviour
                 break;
             case "ngcconfetti":
                 instance.activateNgcConfetti = true;
+                break;
+            case "raffle":
+                instance.activateRaffle = true;
                 break;
         }
     }
