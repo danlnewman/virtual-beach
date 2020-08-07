@@ -39,3 +39,5 @@ UWP/
 UWPBuild/
 
 *.blend?
+
+!server/server.csproj
