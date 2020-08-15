@@ -2,16 +2,15 @@
 @using server.Data
 @inject UnityService ShipService
 
-<button class="btn btn-primary" @onclick="Raffle">Raffle</button>
 <button class="btn btn-primary" @onclick="NgcConfetti">NGC Confetti</button>
 <button class="btn btn-primary" @onclick="RtxConfetti">RTX Confetti</button>
+<button class="btn btn-primary" @onclick="RaffleUp">Raffle Up</button>
+<button class="btn btn-primary" @onclick="RaffleDown">Raffle Down</button>
+<button class="btn btn-primary" @onclick="RaffleSpin">Raffle Spin</button>
+<button class="btn btn-primary" @onclick="TvUp">TV Up</button>
+<button class="btn btn-primary" @onclick="TvDown">Tv Down</button>
 
 @code {
-    private void Raffle()
-    {
-      ShipService.SendMessage("raffle");
-    }
-
     private void NgcConfetti()
     {
       ShipService.SendMessage("ngcconfetti");
@@ -20,6 +19,31 @@
     private void RtxConfetti()
     {
       ShipService.SendMessage("rtxconfetti");
+    }
+
+    private void RaffleUp()
+    {
+      ShipService.SendMessage("raffleup");
+    }
+
+    private void RaffleDown()
+    {
+      ShipService.SendMessage("raffledown");
+    }
+
+    private void RaffleSpin()
+    {
+      ShipService.SendMessage("rafflespin");
+    }
+
+    private void TvUp()
+    {
+      ShipService.SendMessage("tvup");
+    }
+
+    private void TvDown()
+    {
+      ShipService.SendMessage("tvdown");
     }
 
 

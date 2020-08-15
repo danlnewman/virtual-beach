@@ -11,11 +11,18 @@ public class GameManager : MonoBehaviour
     ParticleSystem[] rtxConfetti;
     [SerializeField]
     Spinner spinner;
+    [SerializeField]
+    TvController tv;
 
 
     public bool activateRtxConfetti = false;
     public bool activateNgcConfetti = false;
-    public bool activateRaffle = false;
+    public bool activateRaffleUp = false;
+    public bool activateRaffleDown = false;
+    public bool activateRaffleSpin = false;
+    public bool activateTvUp = true;
+    public bool activateTvDown = true;
+
 
     // Use this for initialization
     private void Awake()
@@ -50,10 +57,30 @@ public class GameManager : MonoBehaviour
             ShootConfetti(ngcConfetti);
             activateNgcConfetti = false;
         }
-        if (activateRaffle)
+        if (activateRaffleUp)
         {
-            StartCoroutine(spinner.Spin());
-            activateRaffle = false;
+            spinner.Up();
+            activateRaffleUp = false;
+        }
+        if (activateRaffleDown)
+        {
+            spinner.Down();
+            activateRaffleDown = false;
+        }
+        if (activateRaffleSpin)
+        {
+            spinner.Spin();
+            activateRaffleSpin = false;
+        }
+        if (activateTvUp)
+        {
+            tv.Up();
+            activateTvUp = false;
+        }
+        if (activateTvDown)
+        {
+            tv.Down();
+            activateTvDown = false;
         }
     }
 
@@ -70,8 +97,20 @@ public class GameManager : MonoBehaviour
             case "ngcconfetti":
                 instance.activateNgcConfetti = true;
                 break;
-            case "raffle":
-                instance.activateRaffle = true;
+            case "raffleup":
+                instance.activateRaffleUp = true;
+                break;
+            case "raffledown":
+                instance.activateRaffleDown = true;
+                break;
+            case "rafflespin":
+                instance.activateRaffleSpin = true;
+                break;
+            case "tvup":
+                instance.activateTvUp = true;
+                break;
+            case "tvdown":
+                instance.activateTvDown = true;
                 break;
         }
     }
